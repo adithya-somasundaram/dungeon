@@ -1,9 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "player.hpp"
 #include "game.hpp"
-#include "maps.hpp"
 
 #define map_count 1  
 
