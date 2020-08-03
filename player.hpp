@@ -11,13 +11,7 @@ private:
     int lives;
     std::array<int,3> inventory;
 public:
-
-    Player(int x_pos, int y_pos, int lives_count)
-    {
-        x = x_pos;
-        y = y_pos;
-        lives = lives_count;
-    }
+    Player(int x_pos, int y_pos, int lives_count); 
 
     int getX(){return x;}
     int getY(){return y;}
