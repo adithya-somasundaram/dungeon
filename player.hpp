@@ -10,7 +10,9 @@ private:
     int y;
     int lives;
     std::array<int,3> inventory;
+
 public:
+    Player();
     Player(int x_pos, int y_pos, int lives_count); 
 
     int getX(){return x;}
@@ -21,8 +23,6 @@ public:
     void goRight(){x++;}
     void goUp(){y--;}
     void goDown(){y++;}
-    
-
 };
 
 #endif
