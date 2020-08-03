@@ -1,8 +1,6 @@
 #ifndef MAPS
 #define MAPS
 
-#include <array>
-
 enum icons {
     W,      // wall
     P,      // path
