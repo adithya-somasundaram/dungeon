@@ -2,7 +2,6 @@
 #define GAME
 
 #include "player.hpp"
-#include "maps.hpp"
 
 enum moves{
     LEFT = 1,
