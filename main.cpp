@@ -13,25 +13,30 @@ int main(){
     int input;
 
     // setup
-    Player* c = new Player();
+    Player* user = new Player();
     while(!gameOver){
-        draw(c, 1);
+        draw(user, 1);
         // input
-        cout << c->getX() << ", " << c->getY() << " Enter a number: ";
+        cout << user->getX() << ", " << user->getY() << " Enter a number: ";
         cin >> input;
         if(input == 0){
             gameOver = true;
         } else if (input == 1){
-            c->goUp();
+            user->goUp();
         } else if (input == 2){
-            c->goDown();
+            user->goDown();
         } else if (input == 3){
-            c->goLeft();
+            user->goLeft();
         } else if (input == 4){
-            c->goRight();
+            user->goRight();
         }
         // logic
     }
-    delete c;
+    if(user->getLives()){
+
+    } else {
+        
+    }
+    delete user;
     return EXIT_SUCCESS;
 }
