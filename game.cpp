@@ -26,7 +26,6 @@ bool logic(Player *a, int move){
             a->goDown();
             break;
         default:
-            cout << "Unknown";
             break;
     }
 

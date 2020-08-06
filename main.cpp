@@ -9,11 +9,11 @@
 using namespace std;
 
 int main(){
+    // set up
     bool gameOver = false;
     char input;
-
-    // setup
     Player* user = new Player();
+    int moves[4] = {0,0,0,0};
 
     while(!gameOver){
         draw(user);
