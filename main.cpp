@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include "game.hpp"
-#include "maps.hpp"
+// #include "maps.hpp"
 
 #define map_count 1  
 
@@ -10,27 +10,39 @@ using namespace std;
 
 int main(){
     bool gameOver = false;
-    int input;
+    char input;
 
     // setup
     Player* user = new Player();
+
     while(!gameOver){
-        draw(user, 1);
+        draw(user);
+
+        input = ' ';
         // input
-        cout << user->getX() << ", " << user->getY() << " Enter a number: ";
-        cin >> input;
-        if(input == 0){
-            gameOver = true;
-        } else if (input == 1){
-            user->goUp();
-        } else if (input == 2){
-            user->goDown();
-        } else if (input == 3){
-            user->goLeft();
-        } else if (input == 4){
-            user->goRight();
+        while(input != 'W' && input != 'A' && input != 'S' && input != 'D' && input != 'Q'){
+            cout << "\nEnter your next move: ";
+            cin >> input;
         }
-        // logic
+
+        int move;
+        switch(input){
+            case 'W':
+                move = UP;
+                break;
+            case 'A':
+                move = LEFT;
+                break;
+            case 'S':
+                move = DOWN;
+                break;
+            case 'D':
+                move = RIGHT;
+                break;
+            default:
+                exit(0);
+        }
+        gameOver = logic(user, move);
     }
     if(user->getLives()){
 

@@ -1,13 +1,13 @@
 #include "player.hpp"
 
 Player::Player(){
-    x = 1;
-    y = 1;
+    row = 1;
+    column = 1;
     lives = 3;
 }
 
-Player::Player(int x_pos, int y_pos, int lives_count){
-    x = x_pos;
-    y = y_pos;
+Player::Player(int r_pos, int c_pos, int lives_count){
+    row = r_pos;
+    column = c_pos;
     lives = lives_count;
 }

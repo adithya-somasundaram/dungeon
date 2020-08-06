@@ -16,4 +16,6 @@ int map_1[5][5] = {
     {W, W, W, W, W},
 };
 
+// int maps [1][5][5] = {map_1};
+
 #endif

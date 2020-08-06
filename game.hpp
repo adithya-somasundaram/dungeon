@@ -3,7 +3,7 @@
 
 #include "player.hpp"
 
-enum moves{
+enum Moves{
     LEFT = 1,
     RIGHT,
     UP,
@@ -11,7 +11,7 @@ enum moves{
     QUIT
 };
 
-void draw(Player *a, int map_numb);
-bool logic(Player *a, int map_numb);
+void draw(Player *a);
+bool logic(Player *a, int move);
 
 #endif

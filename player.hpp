@@ -6,8 +6,8 @@
 
 class Player{
 private:
-    int x;
-    int y;
+    int row;
+    int column;
     int lives;
     std::array<int,3> inventory;
 
@@ -15,14 +15,18 @@ public:
     Player();
     Player(int x_pos, int y_pos, int lives_count); 
 
-    int getX(){return x;}
-    int getY(){return y;}
+    int getRow(){return row;}
+    int getColumn(){return column;}
     int getLives(){return lives;}
 
-    void goLeft(){x--;}
-    void goRight(){x++;}
-    void goUp(){y--;}
-    void goDown(){y++;}
+    void goLeft(){column--;}
+    void goRight(){column++;}
+    void goUp(){row--;}
+    void goDown(){row++;}
+    void loseLife(){lives--;}
+
+    void setRow(int r){row = r;}
+    void setColumn(int c){column = c;}
 };
 
 #endif
