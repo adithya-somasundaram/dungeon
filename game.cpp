@@ -8,7 +8,7 @@ void draw(Player *a){
     cout << "(" << a->getRow() << "," << a->getColumn() << ")\t" << a->getLives();
 }
 
-bool logic(Player *a, int move){
+bool logic(Player *a, int move, int nextMoves[4]){
     int orig_row = a->getRow();
     int orig_column = a->getColumn();
 
@@ -48,6 +48,18 @@ bool logic(Player *a, int move){
             break;
     }
 
+    if(map_1[x-1][y] != W){
+        nextMoves[0] = 1;
+    }
+    if(map_1[x+1][y] != W){
+        nextMoves[2] = 1;
+    }
+    if(map_1[x][y-1] != W){
+        nextMoves[1] = 1;
+    }
+    if(map_1[x][y+1] != W){
+        nextMoves[3] = 1;
+    }
 
     // end game if player is out of lives
     if(a->getLives() > 0){

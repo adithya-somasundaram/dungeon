@@ -8,10 +8,11 @@ enum Moves{
     RIGHT,
     UP,
     DOWN,
-    QUIT
+    QUIT,
+    START
 };
 
 void draw(Player *a);
-bool logic(Player *a, int move);
+bool logic(Player *a, int move, int nextMoves[4]);
 
 #endif
