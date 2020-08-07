@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void draw(Player *a){
+void draw(Player *a, int map_num){
     system("CLEAR");
     cout << "Position: (" << a->getRow() << "," << a->getColumn() << ")";
     cout << "\t Remaining Lives: ";
@@ -12,7 +12,7 @@ void draw(Player *a){
     }
 }
 
-bool logic(Player *a, int move, int nextMoves[4]){
+bool logic(Player *a, int map_num, int move, int nextMoves[4]){
     int orig_row = a->getRow();
     int orig_column = a->getColumn();
 
@@ -36,7 +36,7 @@ bool logic(Player *a, int move, int nextMoves[4]){
     int x = a->getRow();
     int y = a->getColumn();
 
-    int new_space = map_1[x][y];
+    int new_space = map_1[map_num][x][y];
 
     switch(new_space){
         case W:
@@ -52,16 +52,16 @@ bool logic(Player *a, int move, int nextMoves[4]){
             break;
     }
 
-    if(map_1[x-1][y] != W){
+    if(map_1[map_num][x-1][y] != W){
         nextMoves[0] = 1;
     }
-    if(map_1[x+1][y] != W){
+    if(map_1[map_num][x+1][y] != W){
         nextMoves[2] = 1;
     }
-    if(map_1[x][y-1] != W){
+    if(map_1[map_num][x][y-1] != W){
         nextMoves[1] = 1;
     }
-    if(map_1[x][y+1] != W){
+    if(map_1[map_num][x][y+1] != W){
         nextMoves[3] = 1;
     }
 

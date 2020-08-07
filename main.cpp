@@ -14,7 +14,7 @@ int main(){
     int moves[4] = {0,0,0,0};
 
     // initialize game
-    bool gameOver = logic(user, START, moves);
+    bool gameOver = logic(user, 0, START, moves);
 
     // Welcome messages
     system("CLEAR");
@@ -26,7 +26,7 @@ int main(){
 
     while(!gameOver){
         // draw screen
-        draw(user);
+        draw(user, 0);
 
         // diplay available moves
         cout << "\nAvailable moves:  ";
@@ -89,7 +89,7 @@ int main(){
         moves[2] = 0;
         moves[3] = 0;
 
-        gameOver = logic(user, move, moves);
+        gameOver = logic(user, 0, move, moves);
     }
 
     // endgame

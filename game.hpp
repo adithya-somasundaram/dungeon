@@ -12,7 +12,7 @@ enum Moves{
     START
 };
 
-void draw(Player *a);
-bool logic(Player *a, int move, int nextMoves[4]);
+void draw(Player *a, int map_num);
+bool logic(Player *a, int map_num,int move, int nextMoves[4]);
 
 #endif
