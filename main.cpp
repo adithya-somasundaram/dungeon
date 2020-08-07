@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <cstdlib>
 
 #include "game.hpp"
 
@@ -14,7 +15,8 @@ int main(){
     int moves[4] = {0,0,0,0};
 
     // initialize game
-    bool gameOver = logic(user, 0, START, moves);
+    int map = map_count * rand()/RAND_MAX;
+    bool gameOver = logic(user, map, START, moves);
 
     // Welcome messages
     system("CLEAR");
@@ -26,7 +28,7 @@ int main(){
 
     while(!gameOver){
         // draw screen
-        draw(user, 0);
+        draw(user, map);
 
         // diplay available moves
         cout << "\nAvailable moves:  ";
@@ -89,7 +91,7 @@ int main(){
         moves[2] = 0;
         moves[3] = 0;
 
-        gameOver = logic(user, 0, move, moves);
+        gameOver = logic(user, map, move, moves);
     }
 
     // endgame
