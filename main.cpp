@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 #include "game.hpp"
-// #include "maps.hpp"
 
 #define map_count 1  
 
@@ -17,9 +16,19 @@ int main(){
     // initialize game
     bool gameOver = logic(user, START, moves);
 
+    // Welcome messages
+    system("CLEAR");
+    cout << "--- WELCOME TO DUNGEON ---" << endl;
+    cout << "Rules: Make your way through the dungeon to reach the finish point, enter 'Q' at any time to quit";
+    cout << endl << "Enter any key to begin!";
+    cin >> input;
+    input = ' ';
+
     while(!gameOver){
         // draw screen
         draw(user);
+
+        // diplay available moves
         cout << "\nAvailable moves:  ";
         if(moves[0] == 1){
             cout << "W (UP)  ";
@@ -34,6 +43,7 @@ int main(){
             cout << "D (RIGHT)  ";
         }
         cout << endl;
+
         // input
         input = ' ';
         while(input != 'W' && input != 'A' && input != 'S' && input != 'D' && input != 'Q'){
@@ -53,6 +63,7 @@ int main(){
             }
         }
 
+        // store next move based on input
         int move;
         switch(input){
             case 'W':
@@ -68,10 +79,11 @@ int main(){
                 move = RIGHT;
                 break;
             default:
+                cout << "Goodbye!" << endl;
                 exit(0);
         }
 
-        //reset moves
+        //reset moves array
         moves[0] = 0;
         moves[1] = 0;
         moves[2] = 0;
@@ -79,11 +91,16 @@ int main(){
 
         gameOver = logic(user, move, moves);
     }
-    if(user->getLives()){
 
+    // endgame
+    if(user->getLives()){
+        cout << "Congratulations! You win!!!";
     } else {
-        
+        cout << "Oh no! You lose :(";
     }
+    cout << endl;
+
+    // destroy user and end game
     delete user;
     return EXIT_SUCCESS;
 }

@@ -5,7 +5,11 @@ using namespace std;
 
 void draw(Player *a){
     system("CLEAR");
-    cout << "(" << a->getRow() << "," << a->getColumn() << ")\t" << a->getLives();
+    cout << "Position: (" << a->getRow() << "," << a->getColumn() << ")";
+    cout << "\t Remaining Lives: ";
+    for(int i = 0; i < a->getLives(); i++){
+        cout << "*";
+    }
 }
 
 bool logic(Player *a, int move, int nextMoves[4]){
