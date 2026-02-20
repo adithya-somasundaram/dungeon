@@ -11,5 +11,3 @@ Then to run:
 ./a.out
 ```
 To be worked on: Adding user items and inventory, customizing enemies, more maps
-
-Last edited: 8/10/2020
